@@ -26,6 +26,43 @@
 
   <!-- Styles -->
   <link rel="stylesheet" href="styles.css">
+
+  <!-- Structured data: identifies ARISE and distinguishes it from other "Arise" centers -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": ["MedicalBusiness", "MedicalClinic"],
+    "name": "ARISE Treatment Center",
+    "alternateName": "ARISE Substance Abuse Care Services",
+    "url": "https://arisetreatmentcenter.org/",
+    "logo": "https://arisetreatmentcenter.org/FULL_WORD.png",
+    "image": "https://arisetreatmentcenter.org/pexels-sehmullah-18015265.jpg",
+    "telephone": "+1-317-708-1660",
+    "medicalSpecialty": "Addiction",
+    "description": "CARF-accredited (ASAM Level 3.5) residential addiction and dual-diagnosis treatment for adult men in Zionsville, Indiana.",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "4545 Northwestern Dr",
+      "addressLocality": "Zionsville",
+      "addressRegion": "IN",
+      "postalCode": "46077",
+      "addressCountry": "US"
+    },
+    "areaServed": ["Zionsville", "Carmel", "Fishers", "Indianapolis", "Central Indiana"],
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+      "opens": "00:00",
+      "closes": "23:59"
+    },
+    "sameAs": [
+      "https://www.facebook.com/p/Arise-Treatment-Center-61579283055712/",
+      "https://www.instagram.com/arisetreatmentcenter/",
+      "https://www.linkedin.com/company/treatment-at-arise/",
+      "https://carf.org/provider/arise-treatment-center-401361/"
+    ]
+  }
+  </script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
@@ -301,19 +338,12 @@
           <h2 id="insurance-heading">We Accept Most Major Insurance Plans</h2>
         </div>
         <ul class="insurance__list" aria-label="Insurances accepted">
-          <li>Aetna</li>
-          <li>Anthem</li>
-          <li>Carelon</li>
-          <li>CareSource</li>
+          <li>Indiana Medicaid</li>
+          <li>UnitedHealthcare Community Plan</li>
           <li>Cigna</li>
-          <li>Community Health Network</li>
-          <li>Humana</li>
-          <li>Magellan</li>
-          <li>MDwise</li>
-          <li>Medicaid</li>
-          <li>Medicare</li>
-          <li>Optum</li>
-          <li>Priority Health</li>
+          <li>Carelon Behavioral Health</li>
+          <li>Beacon Health Options</li>
+          <li>Unicare</li>
           <li>Tricare</li>
         </ul>
         <p class="insurance__note">For insurances not listed, please <a href="tel:+13177081660">call (317) 708-1660</a> for more information.</p>
