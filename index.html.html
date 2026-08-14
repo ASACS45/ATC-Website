@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ARISE Treatment Center | Recovery Starts Here</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy: #182449;
+    --navy-2: #24336b;
+    --gold: #f3a712;
+    --gold-dark: #d38f0c;
+    --cream: #f8f5ee;
+    --ink: #182449;
+    --ink-soft: #4a5170;
+    --line: rgba(24,36,73,0.12);
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Inter', sans-serif;
+    background:var(--cream);
+    color:var(--ink);
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,.serif{font-family:'Fraunces', serif;}
+  a{color:inherit;}
+  img{max-width:100%; display:block;}
+
+  /* ---------- Sticky call bar ---------- */
+  .callbar{
+    position:sticky; top:0; z-index:50;
+    background:var(--navy);
+    color:#fff;
+    display:flex; align-items:center; justify-content:space-between;
+    padding:12px 18px;
+    font-size:14px;
+    font-weight:600;
+  }
+  .callbar a.btn{
+    background:var(--gold);
+    color:var(--navy);
+    padding:9px 16px;
+    border-radius:999px;
+    font-weight:700;
+    text-decoration:none;
+    font-size:13px;
+    white-space:nowrap;
+  }
+
+  /* ---------- Hero ---------- */
+  .hero{
+    position:relative;
+    min-height:78vh;
+    background:
+      linear-gradient(180deg, rgba(15,20,42,0.35) 0%, rgba(15,20,42,0.75) 75%),
+      url('https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?q=80&w=1200&auto=format&fit=crop')
+      center/cover no-repeat;
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-end;
+    color:#fff;
+    padding:32px 24px 44px;
+  }
+  .hero .mark{
+    position:absolute; top:24px; left:24px;
+    display:flex; align-items:center; gap:10px;
+    font-size:12px; letter-spacing:0.14em; text-transform:uppercase; font-weight:600;
+    opacity:0.9;
+  }
+  .hero .mark svg{width:26px; height:26px;}
+  .hero-eyebrow{
+    letter-spacing:0.18em;
+    text-transform:uppercase;
+    font-size:12px;
+    font-weight:600;
+    color:var(--gold);
+    margin-bottom:14px;
+  }
+  .hero h1{
+    font-size:clamp(2.4rem, 9vw, 3.4rem);
+    line-height:1.04;
+    font-weight:600;
+  }
+  .hero h1 span{color:var(--gold);}
+  .hero p{
+    margin-top:16px;
+    font-size:16px;
+    max-width:32em;
+    color:rgba(255,255,255,0.88);
+  }
+  .hero-loc{
+    margin-top:22px;
+    font-size:13px;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    color:rgba(255,255,255,0.75);
+  }
+
+  /* ---------- Section shell ---------- */
+  section{padding:52px 24px;}
+  .eyebrow{
+    letter-spacing:0.16em;
+    text-transform:uppercase;
+    font-size:12px;
+    font-weight:700;
+    color:var(--gold-dark);
+    margin-bottom:10px;
+  }
+  .section-title{
+    font-size:clamp(1.6rem,6vw,2rem);
+    font-weight:600;
+    margin-bottom:18px;
+  }
+  .lede{
+    color:var(--ink-soft);
+    font-size:15.5px;
+    max-width:38em;
+  }
+
+  /* ---------- Mission (cream) ---------- */
+  .mission{background:var(--cream);}
+  .mission p + p{margin-top:14px;}
+
+  /* ---------- How we help (navy) ---------- */
+  .help{
+    background:var(--navy);
+    color:#fff;
+  }
+  .help .eyebrow{color:var(--gold);}
+  .help-grid{
+    display:grid;
+    gap:22px;
+    margin-top:8px;
+  }
+  .help-card{
+    border-top:1px solid rgba(255,255,255,0.18);
+    padding-top:18px;
+  }
+  .help-card h3{
+    font-family:'Inter', sans-serif;
+    font-size:14px;
+    font-weight:700;
+    letter-spacing:0.02em;
+    color:var(--gold);
+    text-transform:uppercase;
+    margin-bottom:8px;
+  }
+  .help-card p{
+    font-size:14.5px;
+    color:rgba(255,255,255,0.82);
+  }
+  .quote{
+    margin-top:36px;
+    padding-top:28px;
+    border-top:1px solid rgba(255,255,255,0.18);
+  }
+  .quote blockquote{
+    font-family:'Fraunces', serif;
+    font-style:italic;
+    font-size:1.25rem;
+    line-height:1.4;
+    color:#fff;
+  }
+  .quote cite{
+    display:block;
+    margin-top:12px;
+    font-style:normal;
+    font-size:12px;
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+    color:var(--gold);
+  }
+
+  /* ---------- Admissions trail ---------- */
+  .trail{background:var(--cream);}
+  .steps{
+    position:relative;
+    margin-top:28px;
+    padding-left:34px;
+  }
+  .steps::before{
+    content:"";
+    position:absolute;
+    left:13px; top:6px; bottom:6px;
+    width:2px;
+    background:repeating-linear-gradient(180deg, var(--gold) 0 6px, transparent 6px 12px);
+  }
+  .step{
+    position:relative;
+    padding-bottom:30px;
+  }
+  .step:last-child{padding-bottom:0;}
+  .step .num{
+    position:absolute;
+    left:-34px; top:0;
+    width:28px; height:28px;
+    border-radius:50%;
+    background:var(--gold);
+    color:var(--navy);
+    font-weight:700;
+    font-size:13px;
+    display:flex; align-items:center; justify-content:center;
+  }
+  .step h3{
+    font-size:16px;
+    font-weight:700;
+    margin-bottom:4px;
+  }
+  .step p{
+    font-size:14.5px;
+    color:var(--ink-soft);
+  }
+  .refer-box{
+    margin-top:30px;
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:20px;
+    font-size:14.5px;
+  }
+  .refer-box a{
+    color:var(--navy-2);
+    font-weight:700;
+    text-decoration:underline;
+    text-decoration-color:var(--gold);
+    text-underline-offset:3px;
+  }
+
+  /* ---------- Insurance ---------- */
+  .insurance{
+    background:#fff;
+  }
+  .ins-callout{
+    background:var(--gold);
+    color:var(--navy);
+    font-weight:700;
+    font-size:14px;
+    padding:14px 16px;
+    border-radius:12px;
+    margin-bottom:20px;
+  }
+  .ins-list{
+    list-style:none;
+    display:grid;
+    gap:12px;
+  }
+  .ins-list li{
+    display:flex;
+    align-items:flex-start;
+    gap:12px;
+    font-size:15px;
+    font-weight:500;
+    padding-bottom:12px;
+    border-bottom:1px solid var(--line);
+  }
+  .ins-list li:last-child{border-bottom:none;}
+  .ins-list .sq{
+    width:10px; height:10px;
+    background:var(--gold);
+    margin-top:6px;
+    flex-shrink:0;
+  }
+
+  /* ---------- Contact / footer ---------- */
+  .contact{
+    background:var(--navy);
+    color:#fff;
+    text-align:center;
+  }
+  .contact .mark{
+    width:56px; height:56px;
+    margin:0 auto 18px;
+  }
+  .contact h2{
+    font-size:1.6rem;
+    font-weight:600;
+    margin-bottom:6px;
+  }
+  .contact .tagline{
+    color:var(--gold);
+    font-size:14px;
+    letter-spacing:0.06em;
+    margin-bottom:28px;
+  }
+  .contact-detail{
+    font-size:15px;
+    margin-bottom:6px;
+    color:rgba(255,255,255,0.9);
+  }
+  .contact-detail strong{color:#fff;}
+  .contact .btn-row{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+    margin:26px auto 0;
+    max-width:320px;
+  }
+  .contact .btn-row a{
+    display:block;
+    padding:14px 18px;
+    border-radius:999px;
+    font-weight:700;
+    text-decoration:none;
+    font-size:14.5px;
+  }
+  .btn-primary{background:var(--gold); color:var(--navy);}
+  .btn-secondary{background:transparent; border:1px solid rgba(255,255,255,0.4); color:#fff;}
+  footer{
+    background:#0f1633;
+    color:rgba(255,255,255,0.55);
+    text-align:center;
+    font-size:12px;
+    padding:22px 24px;
+  }
+</style>
+</head>
+<body>
+
+  <div class="callbar">
+    <span>Admissions open now</span>
+    <a class="btn" href="tel:+13177081660">Call (317) 708-1660</a>
+  </div>
+
+  <div class="hero">
+    <div class="mark">
+      <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="68" cy="30" r="14" fill="#fff"/>
+        <path d="M5 85 L38 25 L55 55 L65 40 L95 85 Z" fill="#fff"/>
+      </svg>
+      ARISE Treatment Center
+    </div>
+    <div class="hero-eyebrow">Carmel &amp; Zionsville</div>
+    <h1>Recovery <span>starts here.</span></h1>
+    <p>A residential program for adult men, built on clinical care and a 12-Step foundation &mdash; you never walk this road alone.</p>
+    <div class="hero-loc">4545 Northwestern Dr &middot; Zionsville, IN 46077</div>
+  </div>
+
+  <section class="mission">
+    <div class="eyebrow">Let us help you take the first step</div>
+    <h2 class="section-title">Our mission</h2>
+    <div class="lede">
+      <p>ARISE Treatment Center is a residential program for adult men. We help men who are medically stable gain the knowledge and strength to recover, with clinical care and a 12-Step foundation working together.</p>
+      <p>Our mission is to empower individuals and families to overcome behavioral health challenges and achieve lasting recovery through compassionate, evidence-based, and person-centered care.</p>
+      <p>We aim to be a leader in behavioral healthcare in Central Indiana, recognized for our clinical excellence, innovative practices, and unwavering commitment to the communities we serve.</p>
+    </div>
+  </section>
+
+  <section class="help">
+    <div class="eyebrow">How we can help</div>
+    <h2 class="section-title">Structured care, every step of the climb</h2>
+    <div class="help-grid">
+      <div class="help-card">
+        <h3>Holistic, person-centered treatment</h3>
+        <p>Non-judgmental, trauma-informed care for men facing substance use, who may also carry medical or mental health concerns, built around each man's history and goals.</p>
+      </div>
+      <div class="help-card">
+        <h3>Structured living. Clinical care.</h3>
+        <p>A CARF-accredited, ASAM Level 3.5 residential program for men who are medically stable. 28 to 30 days of clinician-led group and individual therapy with a 12-Step foundation. Acute detox is referred out.</p>
+      </div>
+      <div class="help-card">
+        <h3>Community connections</h3>
+        <p>Clinical group sessions five days a week, daily recovery meetings, peer support, and case management. Recovery is stronger in community.</p>
+      </div>
+      <div class="help-card">
+        <h3>Aftercare, the climb continues</h3>
+        <p>A step down to a lower level of care such as IOP or ASAM 3.1, a discharge and transition plan, and APEX follow-up to 180 days.</p>
+      </div>
+    </div>
+    <div class="quote">
+      <blockquote>&ldquo;Recovery is not simple abstinence. It is about healing the brain, remembering how to feel, and engaging in healthy relationships.&rdquo;</blockquote>
+      <cite>Debra Jay, Addiction Specialist</cite>
+    </div>
+  </section>
+
+  <section class="trail">
+    <div class="eyebrow">Admissions &amp; referral</div>
+    <h2 class="section-title">Five steps to admission</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="num">1</div>
+        <h3>Refer or reach out</h3>
+        <p>Complete our secure referral form or contact our office.</p>
+      </div>
+      <div class="step">
+        <div class="num">2</div>
+        <h3>Coverage verification</h3>
+        <p>Our admissions team verifies coverage and reaches out to you.</p>
+      </div>
+      <div class="step">
+        <div class="num">3</div>
+        <h3>Clinical pre-screening</h3>
+        <p>A brief screening by phone or in person.</p>
+      </div>
+      <div class="step">
+        <div class="num">4</div>
+        <h3>Admission</h3>
+        <p>We welcome clients who are medically stable at admission.</p>
+      </div>
+      <div class="step">
+        <div class="num">5</div>
+        <h3>Ongoing updates</h3>
+        <p>With client consent.</p>
+      </div>
+    </div>
+    <div class="refer-box">
+      To refer a client, call <a href="tel:+13177081660">(317) 708-1660</a> or visit
+      <a href="https://arisetreatmentcenter.org/admissions">arisetreatmentcenter.org/admissions</a>.
+    </div>
+  </section>
+
+  <section class="insurance">
+    <div class="eyebrow">Coverage</div>
+    <h2 class="section-title">Insurances accepted</h2>
+    <div class="ins-callout">For plans not listed here, please call for more information.</div>
+    <ul class="ins-list">
+      <li><span class="sq"></span>Indiana Medicaid</li>
+      <li><span class="sq"></span>Anthem BCBS (Medicaid &amp; Commercial)</li>
+      <li><span class="sq"></span>United Healthcare (Hoosier Care Connect)</li>
+      <li><span class="sq"></span>Cigna / Evernorth</li>
+      <li><span class="sq"></span>Carelon Behavioral Health</li>
+      <li><span class="sq"></span>Tricare</li>
+    </ul>
+  </section>
+
+  <section class="contact">
+    <svg class="mark" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="68" cy="30" r="14" fill="#f3a712"/>
+      <path d="M5 85 L38 25 L55 55 L65 40 L95 85 Z" fill="#fff"/>
+    </svg>
+    <h2>Embrace healing. Embrace sobriety.</h2>
+    <div class="tagline">You never walk this road alone.</div>
+    <div class="contact-detail"><strong>(317) 708-1660</strong></div>
+    <div class="contact-detail">4545 Northwestern Dr, Zionsville, IN 46077</div>
+    <div class="contact-detail">arisetreatmentcenter.org</div>
+    <div class="btn-row">
+      <a class="btn-primary" href="tel:+13177081660">Call (317) 708-1660</a>
+      <a class="btn-secondary" href="https://arisetreatmentcenter.org/admissions">Refer a client</a>
+      <a class="btn-secondary" href="https://arisetreatmentcenter.org">Visit arisetreatmentcenter.org</a>
+    </div>
+  </section>
+
+  <footer>
+    ARISE Treatment Center &middot; Carmel &amp; Zionsville, Indiana &middot; CARF-accredited, ASAM Level 3.5
+  </footer>
+
+</body>
+</html>
